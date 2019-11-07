@@ -22,6 +22,22 @@ You should follow along by cloning my repo. Then, you'll have all the files you 
 
 If you haven't already, install the `shiny` library. Open the file called `basic_app_template.R`. Believe it or not, this is a shiny app! Try running the app by clicking the Run App button. You can also use the drop-down to display it in different places. What does that do?  
 
+## Goal of this app
+
+Create a Shiny app for my kids to explore the babynames dataset! 
+
+Requirements: 
+
+* Show the number of babies with a given name over time.  
+* Allow the user to type a single name. (Ideally, it should give a message if there are no records of the name that was typed, but we won't worry about that now.)  
+* Allow the user to choose a range of years. 
+* Filter by sex.
+
+## Goal of this app
+
+![](goals.png){width=700px}
+
+
 ## What is an app.R file?
 
 The file contains two key components:
@@ -76,6 +92,21 @@ R code that may call various input$InputId's
 ```
 
 Use the inputs you've already created in the babynames app and add filtering and ggplot code to the server portion to render the desired interactive plot. Also, try adding a submit button to the UI so everything is updated at the same time, only when the button is clicked.
+
+## Enhance the app
+
+Try adding something more to the app. Here are a couple ideas.
+
+1. Return a message if the user enters a name incorrectly. By the way, this will happen if someone enters a name with all lowercase letters, too. How could you solve that problem?
+
+2. Allow the user to enter more than one name and compare the graphs either by coloring different lines or using faceting.  
+
+3. Allow the user to change something about the graph, like the color of the line or the type of line.
+
+
+## Make your own app!
+
+Use your project data to create an interesting app!
 
 
 

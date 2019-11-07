@@ -12,6 +12,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Check out some of the examples in the shiny [gallery](https://shiny.rstudio.com/gallery/). Look at the simpler ones first. This is also a great place to learn about the various input and output options you have available when you create your app.
 
+As we're going, I also recommend having the [Shiny cheatsheet](https://rstudio.com/resources/cheatsheets/) open. Find it near the middle of the cheatsheet page. You should also consider watching at least the first part of this [tutorial](https://shiny.rstudio.com/tutorial/) by Garrett Grolemund.
+
 ## Our first Shiny app
 
 First, you can find all this material on my github page: https://github.com/llendway/intro_to_shiny
@@ -26,7 +28,7 @@ The file contains two key components:
 
 * `ui`: the user interface. This is the webpage that your user with interact with. Don't worry, you don't need to know how to write html! The app will do that for you! 
 
-* `server`: the computer part. What should the computer/server do with your inputs as the user changes them. This section will have R code in it, more like we're used to.
+* `server`: the computer part. What should the computer/server do with your inputs as the user changes them. This section will have R code in it, more like we're used to ... sort of.
 
 These parts *always* need to have these names. The last chunk of code at the bottom, `shinyApp(ui = ui, server = server)`, will compile everything together to result in the interactive webpage.
 
@@ -34,7 +36,47 @@ These parts *always* need to have these names. The last chunk of code at the bot
 
 Go into the `basic_app_template.R` and add some text between quotes inside the `fluidPage()` function. Run the app. What happens?
 
-## Creating Inputs and Outputs in the ui
+At the top of the file, also add the `tidyverse` and `babynames` libraries.
+
+
+## Creating Inputs and Outputs in the `ui`
+
+* We will add different `*Input()` and `*Output()` functions to the `ui`.  
+* The `*Input*()` functions collect inputs from the user. See some of the examples on the cheatsheet.  
+* The `*Output()` functions work with the `render*()` functions in the `server` part to to add R output to the UI. 
+
+## Inputs
+
+In the basic_app_template, add three inputs inside the `fluidPage()` function. Be sure to separate them with commas.
+
+* `sliderInput()` to choose the start and end year for the eventual graph.  
+* `textInput()` to write a name.  
+* `selectInput()` to choose a sex.
+
+In all of these functions, the first two arguments are the same: `inputId` is how you will call this input in the `server` portion later, `label` is how this will actually be labeled in your UI. Each function has some additional arguments depending what you want to do. Once you complete all the necessary arguments, run your app. Make sure you can enter and move things around as expected.
+
+## Outputs
+
+Now, add an `plotOutput` to the `fluidPage()` function. You need to give it the `outputId` argument, which is just a name you will refer to the output later in the server portion. 
+
+Run the app with the output. Notice that nothing really changes. Think of this output as a placeholder. So, it knows there is going to be a plot in the UI, but the details of what the plot will look like and the R code to create it will be in the server portion. 
+
+## Rendering outputs
+
+In the server portion of the code, we will use `render*()` functions with R code to communicate how to use the input pieces along with the R code to create the desired output. The `render*()` function you use will depend on the desired output. Since we are interested in creating a plot, we will use the `renderPlot()` function. 
+
+In general, this section will look something like this:
+
+```{r eval=FALSE}
+server <- function(input, output) {
+  output$outputId_of_interest <- render____({
+R code that may call various input$InputId's
+  })
+}
+```
+
+Use the inputs you've already created in the babynames app and add filtering and ggplot code to the server portion to render the desired interactive plot. Also, try adding a submit button to the UI so everything is updated at the same time, only when the button is clicked.
+
 
 
 

@@ -3122,6 +3122,8 @@ slide:not(.current) .plotly.html-widget{
 
 <p>Check out some of the examples in the shiny <a href='https://shiny.rstudio.com/gallery/' title=''>gallery</a>. Look at the simpler ones first. This is also a great place to learn about the various input and output options you have available when you create your app.</p>
 
+<p>As we’re going, I also recommend having the <a href='https://rstudio.com/resources/cheatsheets/' title=''>Shiny cheatsheet</a> open. Find it near the middle of the cheatsheet page. You should also consider watching at least the first part of this <a href='https://shiny.rstudio.com/tutorial/' title=''>tutorial</a> by Garrett Grolemund.</p>
+
 </article></slide><slide class=""><hgroup><h2>Our first Shiny app</h2></hgroup><article  id="our-first-shiny-app">
 
 <p>First, you can find all this material on my github page: <a href='https://github.com/llendway/intro_to_shiny' title=''>https://github.com/llendway/intro_to_shiny</a></p>
@@ -3136,7 +3138,7 @@ slide:not(.current) .plotly.html-widget{
 
 <ul>
 <li><p><code>ui</code>: the user interface. This is the webpage that your user with interact with. Don’t worry, you don’t need to know how to write html! The app will do that for you!</p></li>
-<li><p><code>server</code>: the computer part. What should the computer/server do with your inputs as the user changes them. This section will have R code in it, more like we’re used to.</p></li>
+<li><p><code>server</code>: the computer part. What should the computer/server do with your inputs as the user changes them. This section will have R code in it, more like we’re used to … sort of.</p></li>
 </ul>
 
 <p>These parts <em>always</em> need to have these names. The last chunk of code at the bottom, <code>shinyApp(ui = ui, server = server)</code>, will compile everything together to result in the interactive webpage.</p>
@@ -3145,7 +3147,41 @@ slide:not(.current) .plotly.html-widget{
 
 <p>Go into the <code>basic_app_template.R</code> and add some text between quotes inside the <code>fluidPage()</code> function. Run the app. What happens?</p>
 
-</article></slide><slide class=""><hgroup><h2>Creating Inputs and Outputs in the ui</h2></hgroup><article  id="creating-inputs-and-outputs-in-the-ui"></article></slide>
+<p>At the top of the file, also add the <code>tidyverse</code> and <code>babynames</code> libraries.</p>
+
+</article></slide><slide class=""><hgroup><h2>Creating Inputs and Outputs in the <code>ui</code></h2></hgroup><article  id="creating-inputs-and-outputs-in-the-ui">
+
+<ul>
+<li>We will add different <code>*Input()</code> and <code>*Output()</code> functions to the <code>ui</code>.<br/></li>
+<li>The <code>*Input*()</code> functions collect inputs from the user. See some of the examples on the cheatsheet.<br/></li>
+<li>The <code>*Output()</code> functions work with the <code>render*()</code> functions in the <code>server</code> part to to add R output to the UI.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Inputs</h2></hgroup><article  id="inputs">
+
+<p>In the basic_app_template, add three inputs inside the <code>fluidPage()</code> function. Be sure to separate them with commas.</p>
+
+<ul>
+<li><code>sliderInput()</code> to choose the start and end year for the eventual graph.<br/></li>
+<li><code>textInput()</code> to write a name.<br/></li>
+<li><code>selectInput()</code> to choose a sex.</li>
+</ul>
+
+<p>In all of these functions, the first two arguments are the same: <code>inputId</code> is how you will call this input in the <code>server</code> portion later, <code>label</code> is how this will actually be labeled in your UI. Each function has some additional arguments depending what you want to do. Once you complete all the necessary arguments, run your app. Make sure you can enter and move things around as expected.</p>
+
+</article></slide><slide class=""><hgroup><h2>Outputs</h2></hgroup><article  id="outputs">
+
+<p>Now, add an <code>plotOutput</code> to the <code>fluidPage()</code> function. You need to give it the <code>outputId</code> argument, which is just a name you will refer to the output later in the server portion.</p>
+
+<p>Run the app with the output. Notice that nothing really changes. Think of this output as a placeholder. So, it knows there is going to be a plot in the UI, but the details of what the plot will look like and the R code to create it will be in the server portion.</p>
+
+</article></slide><slide class=""><hgroup><h2>Rendering outputs</h2></hgroup><article  id="rendering-outputs">
+
+<p>In the server portion of the code, we will use <code>render*()</code> functions with R code to communicate how to use the input pieces along with the R code to create the desired output. The <code>render*()</code> function you use will depend on the desired output. Since we are interested in creating a plot, we will use the <code>renderPlot()</code> function.</p>
+
+<p>In general, this section will look something like this:</p>
+
+<p>Use the inputs you’ve already created in the babynames app and add filtering and ggplot code to the server portion to render the desired interactive plot. Also, try adding a submit button to the UI so everything is updated at the same time, only when the button is clicked.</p></article></slide>
 
 
   <slide class="backdrop"></slide>

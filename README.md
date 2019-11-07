@@ -7,4 +7,5 @@ Requirements:
 
 * Show the number of babies with a given name over time.  
 * Allow the user to type a single name. It should give an error if there are no records of the name that was typed.  
-* All the user to choose a range of years. 
+* Allow the user to choose a range of years. 
+* Filter by sex.

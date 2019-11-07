@@ -1,0 +1,40 @@
+---
+title: "Intro to Shiny"
+author: "Lisa Lendway"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## What is a Shiny app?
+
+Check out some of the examples in the shiny [gallery](https://shiny.rstudio.com/gallery/). Look at the simpler ones first. This is also a great place to learn about the various input and output options you have available when you create your app.
+
+## Our first Shiny app
+
+First, you can find all this material on my github page: https://github.com/llendway/intro_to_shiny
+
+You should follow along by cloning my repo. Then, you'll have all the files you need!
+
+If you haven't already, install the `shiny` library. Open the file called `basic_app_template.R`. Believe it or not, this is a shiny app! Try running the app by clicking the Run App button. You can also use the drop-down to display it in different places. What does that do?  
+
+## What is an app.R file?
+
+The file contains two key components:
+
+* `ui`: the user interface. This is the webpage that your user with interact with. Don't worry, you don't need to know how to write html! The app will do that for you! 
+
+* `server`: the computer part. What should the computer/server do with your inputs as the user changes them. This section will have R code in it, more like we're used to.
+
+These parts *always* need to have these names. The last chunk of code at the bottom, `shinyApp(ui = ui, server = server)`, will compile everything together to result in the interactive webpage.
+
+## Make a small change to the app
+
+Go into the `basic_app_template.R` and add some text between quotes inside the `fluidPage()` function. Run the app. What happens?
+
+## Creating Inputs and Outputs in the ui
+
+
+

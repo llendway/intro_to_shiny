@@ -120,5 +120,6 @@ Use your project data to create an interesting app!
 
 The instructions are set out in more detail [here](https://shiny.rstudio.com/articles/shinyapps.html). 
 
+You can see the example of my sample app before it was published in the shiny_app folder of all my files (note that the `rsconnect` folder is added after publishing the app). The published app is [here](https://lisalendway.shinyapps.io/shiny_app/). 
 
 

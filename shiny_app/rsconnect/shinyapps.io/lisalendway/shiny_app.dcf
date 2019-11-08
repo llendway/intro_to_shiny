@@ -1,0 +1,12 @@
+name: shiny_app
+title: shiny_app
+username:
+account: lisalendway
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1445698
+bundleId: 2574854
+url: https://lisalendway.shinyapps.io/shiny_app/
+when: 1573244506.43889
+asMultiple: FALSE
+asStatic: FALSE

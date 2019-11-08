@@ -108,6 +108,17 @@ Try adding something more to the app. Here are a couple ideas.
 
 Use your project data to create an interesting app!
 
+## Publishing your app
+1. Install and load the `rsconnect` library in your R Studio session. 
+2. Register at [https://www.shinyapps.io/admin/#/signup](https://www.shinyapps.io/admin/#/signup).  
+3. Once you are logged in to shinyapps.io, go to Account --> Tokens and click the Show button.  
+4. Copy and paste the code into R. This will connect your account to R Studio. 
+5. When you create an app, save it as `app.R` in a folder **ALL BY ITSELF**. It **MUST** be named `app.R` and it **MUST** be all by itself (at least I could not get it to work otherwise).  
+6. Run the app. In the upper right-hand corner, there is an option to publish the app. Click on that. It will take a bit of time to do it the first time. Once published, you can go to the app via the webpage provided.
+
+## Publishing your app
+
+The instructions are set out in more detail [here](https://shiny.rstudio.com/articles/shinyapps.html). 
 
 
 

@@ -106,7 +106,7 @@ Try adding something more to the app. Here are a couple ideas.
 
 ## Make your own app!
 
-Use your project data to create an interesting app!
+Use your project data to create an interesting app! 
 
 ## Publishing your app
 1. Install and load the `rsconnect` library in your R Studio session. 

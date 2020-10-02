@@ -5,7 +5,7 @@ output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## What is a Shiny app?
@@ -18,7 +18,7 @@ As we're going, I also recommend having the [Shiny cheatsheet](https://rstudio.c
 
 First, you can find all this material on my github page: https://github.com/llendway/intro_to_shiny
 
-You should follow along by cloning my repo. Then, you'll have all the files you need!
+You should follow along by forking and cloning my repo. Then, you'll have all the files you need!
 
 If you haven't already, install the `shiny` library. Open the file called `basic_app_template.R`. Believe it or not, this is a shiny app! Try running the app by clicking the Run App button. You can also use the drop-down to display it in different places. What does that do?  
 
@@ -42,11 +42,11 @@ Requirements:
 
 The file contains two key components:
 
-* `ui`: the user interface. This is the webpage that your user with interact with. Don't worry, you don't need to know how to write html! The app will do that for you! 
+* `ui`: the user interface. This is the webpage that your user will interact with. Don't worry, you don't need to know how to write html! The app will do that for you! (Although if you want to, there are opportunities to use html.)
 
 * `server`: the computer part. What should the computer/server do with your inputs as the user changes them. This section will have R code in it, more like we're used to ... sort of.
 
-These parts *always* need to have these names. The last chunk of code at the bottom, `shinyApp(ui = ui, server = server)`, will compile everything together to result in the interactive webpage.
+I always keep these names as the default. The last chunk of code at the bottom, `shinyApp(ui = ui, server = server)`, will compile everything together to result in the interactive webpage.
 
 ## Make a small change to the app
 
@@ -112,7 +112,7 @@ Use your project data to create an interesting app!
 1. Install and load the `rsconnect` library in your R Studio session. 
 2. Register at [https://www.shinyapps.io/admin/#/signup](https://www.shinyapps.io/admin/#/signup).  
 3. Once you are logged in to shinyapps.io, go to Account --> Tokens and click the Show button.  
-4. Copy and paste the code into R. This will connect your account to R Studio. 
+4. Copy and paste the code into the console in R. This will connect your account to R Studio. 
 5. When you create an app, save it as `app.R` in a folder **ALL BY ITSELF**. It **MUST** be named `app.R` and it **MUST** be all by itself (at least I could not get it to work otherwise).  
 6. Run the app. In the upper right-hand corner, there is an option to publish the app. Click on that. It will take a bit of time to do it the first time. Once published, you can go to the app via the webpage provided.
 

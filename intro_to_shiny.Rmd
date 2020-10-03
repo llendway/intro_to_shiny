@@ -113,7 +113,7 @@ Use your project data to create an interesting app!
 2. Register at [https://www.shinyapps.io/admin/#/signup](https://www.shinyapps.io/admin/#/signup).  
 3. Once you are logged in to shinyapps.io, go to Account --> Tokens and click the Show button.  
 4. Copy and paste the code into the console in R. This will connect your account to R Studio. 
-5. When you create an app, save it as `app.R` in a folder **ALL BY ITSELF**. It **MUST** be named `app.R` and it **MUST** be all by itself (at least I could not get it to work otherwise).  
+5. When you create an app, save it as `app.R` in a folder. It **MUST** be named `app.R`. In the `app.R` file, load all libraries you use in your code. Also try not to have extra libraries or it will take longer to get it on the website. Any data that your app uses needs to be read in within the app. If the data are local to your computer, you need to have the data in the same folder as the app.    
 6. Run the app. In the upper right-hand corner, there is an option to publish the app. Click on that. It will take a bit of time to do it the first time. Once published, you can go to the app via the webpage provided.
 
 ## Publishing your app
